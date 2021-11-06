@@ -1,7 +1,6 @@
 package io.xp.kata;
 
-import io.xp.kata.gildedrose.GildedRose;
-import io.xp.kata.gildedrose.Item;
+import io.xp.kata.gildedrose.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;

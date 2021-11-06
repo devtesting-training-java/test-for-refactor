@@ -3,7 +3,6 @@ package io.xp.kata.gildedrose;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
-import io.xp.kata.NormalItem;
 import org.junit.Test;
 
 public class GildedRoseTest {

@@ -1,4 +1,4 @@
-package io.xp.kata;
+package io.xp.kata.gildedrose;
 
 import io.xp.kata.gildedrose.Item;
 

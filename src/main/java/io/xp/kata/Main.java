@@ -18,15 +18,15 @@ public class Main {
         printStream.println("OMGHAI!");
 
         Item[] items = new Item[] {
-                new NormalItem("+5 Dexterity Vest", 10, 2),
-                new NormalItem("+5 Dexterity Vest", 10, 0),
+                new NormalItem("+5 Dexterity Vest", 1, 2),
+                new NormalItem("+5 Dexterity Vest", 1, 0),
                 new NormalItem("+5 Dexterity Vest", 0, 2),
                 new NormalItem("+5 Dexterity Vest", 0, 1),
-                new AgedBrie("Aged Brie", 10, 50),
-                new AgedBrie("Aged Brie", 10, 2),
+                new AgedBrie("Aged Brie", 1, 50),
+                new AgedBrie("Aged Brie", 1, 2),
                 new AgedBrie("Aged Brie", 0, 49),
                 new AgedBrie("Aged Brie", 0, 2),
-                new Sulfuras("Sulfuras, Hand of Ragnaros", 10, 2),
+                new Sulfuras("Sulfuras, Hand of Ragnaros", 1, 2),
                 new Passes("Backstage passes to a TAFKAL80ETC concert", 11, 50),
                 new Passes("Backstage passes to a TAFKAL80ETC concert", 11, 2),
                 new Passes("Backstage passes to a TAFKAL80ETC concert", 10, 49),

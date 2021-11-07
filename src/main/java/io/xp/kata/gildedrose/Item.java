@@ -1,25 +1,73 @@
 package io.xp.kata.gildedrose;
 
-public class Item {
+import java.util.Objects;
 
-    public String name;
+public abstract class Item {
 
-    public int sell_in;
+    private String name;
 
-    public int quality;
+    private int sellIn;
 
-    public Item(String name, int sell_in, int quality) {
+    private int quality;
+
+    public Item(String name, int sellIn, int quality) {
         this.name = name;
-        this.sell_in = sell_in;
+        this.sellIn = sellIn;
         this.quality = quality;
     }
 
     @Override
     public String toString() {
-        return this.name + ", " + this.sell_in + ", " + this.quality;
+        return this.name + ", " + this.sellIn + ", " + this.quality;
     }
 
-    public void updateItem() {
+    public void update() {
+        updateSellIn();
+        updateQuality(qualityDelta());
     }
 
+    protected abstract int qualityDelta();
+
+    protected void updateQuality(int delta) {
+        quality += delta;
+        if (quality < 0) {
+            quality = 0;
+        }
+        if (quality > 50) {
+            quality = 50;
+        }
+    }
+
+    protected void updateSellIn() {
+        sellIn = sellIn - 1;
+    }
+
+    protected void clearQuality() {
+        quality = 0;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getSellIn() {
+        return sellIn;
+    }
+
+    public int getQuality() {
+        return quality;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Item item = (Item) o;
+        return sellIn == item.sellIn && quality == item.quality && name.equals(item.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, sellIn, quality);
+    }
 }

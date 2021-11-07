@@ -1,6 +1,5 @@
 package io.xp.kata.gildedrose;
 
-import io.xp.kata.gildedrose.Item;
 
 public class NormalItem extends Item {
     public NormalItem(String name, int sell_in, int quality) {
@@ -8,17 +7,8 @@ public class NormalItem extends Item {
     }
 
     @Override
-    public void updateItem() {
-        if (quality > 0) {
-            quality = quality - 1;
-        }
-
-        sell_in = sell_in - 1;
-
-        if (sell_in < 0) {
-            if (quality > 0) {
-                quality = quality - 1;
-            }
-        }
+    protected int qualityDelta() {
+        return getSellIn() < 0 ? -2 : -1;
     }
+
 }

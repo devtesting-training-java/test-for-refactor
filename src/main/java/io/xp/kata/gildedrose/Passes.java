@@ -1,35 +1,28 @@
 package io.xp.kata.gildedrose;
 
-import io.xp.kata.gildedrose.Item;
-
 public class Passes extends Item {
     public Passes(String name, int sell_in, int quality) {
         super(name, sell_in, quality);
     }
 
     @Override
-    public void updateItem() {
-        if (quality < 50) {
-            quality = quality + 1;
+    public void update() {
+        super.update();
 
-            if (sell_in < 11) {
-                if (quality < 50) {
-                    quality = quality + 1;
-                }
-            }
-
-            if (sell_in < 6) {
-                if (quality < 50) {
-                    quality = quality + 1;
-                }
-            }
+        if (getSellIn() < 0) {
+            clearQuality();
         }
+    }
 
-        sell_in = sell_in - 1;
-
-        if (sell_in < 0) {
-            quality = 0;
+    @Override
+    protected int qualityDelta() {
+        if (getSellIn() < 5) {
+            return 3;
         }
+        if (getSellIn() < 10) {
+            return 2;
+        }
+        return 1;
     }
 
 }

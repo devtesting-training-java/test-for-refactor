@@ -56,7 +56,7 @@ public class Main {
                 printStream.println(item);
             }
             printStream.println();
-            app.updateQuality();
+            app.updateItems();
         }
         return outputStream.toString();
     }

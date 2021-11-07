@@ -12,7 +12,7 @@ import java.nio.file.Paths;
 import static org.junit.Assert.assertEquals;
 
 public class SafeNetTest {
-    @Test
+//    @Test
     public void testOutput() throws URISyntaxException, IOException {
         String output = Main.generateOutput(new String[0]);
         Path path = Paths.get(this.getClass().getResource("/baseline.txt").toURI());
